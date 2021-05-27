@@ -1,13 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {View, TextInput} from 'react-native';
+import {View} from 'react-native';
 import {Controller} from 'react-hook-form';
+import {TextInput} from 'react-native-paper';
 
 import {styles} from './styles';
+import Text from '../../components/text';
 import {colors} from '../../config';
 
 const ControllerInput = props => {
-  console.log('ControllerInput, Props: ', props);
   const {
     control,
     defaultValue,
@@ -17,8 +18,35 @@ const ControllerInput = props => {
     errors,
     ...rest
   } = props;
+
+  const getErrorMessage = () => {
+    console.log('Errors: ', errors);
+    if (!errors) {
+      return null;
+    }
+    if (errors.message) {
+      return errors.message;
+    }
+    if (Array.isArray(errors)) {
+      let e = '';
+      errors.forEach(err => {
+        e =
+          e +
+          inputName.charAt(0).toUpperCase() +
+          inputName.slice(1) +
+          ' ' +
+          err +
+          '\n';
+      });
+      return e;
+    }
+    return null;
+  };
+
+  const errorMessage = getErrorMessage();
+
   return (
-    <View style={styles.inputContainer}>
+    <View>
       <Controller
         name={inputName}
         control={control}
@@ -27,14 +55,27 @@ const ControllerInput = props => {
         render={({field: {onChange, onBlur, value}}) => (
           <TextInput
             {...rest}
-            placeholderTextColor={colors.whiteLight}
+            underlineColor={colors.white}
+            error={errors ? true : false}
+            label={label}
             style={styles.input}
             onBlur={onBlur}
             onChangeText={value => onChange(value)}
             value={value}
+            theme={{
+              colors: {
+                text: colors.white,
+                placeholder: colors.white,
+              },
+            }}
           />
         )}
       />
+      {errorMessage && (
+        <Text style={styles.errorMessage} medium>
+          {errorMessage}
+        </Text>
+      )}
     </View>
   );
 };
