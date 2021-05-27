@@ -9,6 +9,7 @@ const Button = props => {
   const {style, label, onPress, outline, loading} = props;
   return (
     <TouchableOpacity
+      disabled={loading}
       style={[
         style && style,
         buttonStyles.base,

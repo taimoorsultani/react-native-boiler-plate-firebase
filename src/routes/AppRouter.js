@@ -41,7 +41,7 @@ const AppRouter = props => {
 
   return (
     <View style={mainStyles.mainView}>
-      <StatusBar />
+      <StatusBar barStyle={'light-content'} />
       {!isConnected ? <NotConnected clickTry={checkInternet} /> : <RootStack />}
     </View>
   );
