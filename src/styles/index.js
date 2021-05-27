@@ -9,6 +9,10 @@ export const mainStyles = StyleSheet.create({
   safeAreaView: {
     flex: 1,
   },
+  alignCenter: {
+    flex: 1,
+    alignItems: 'center',
+  },
   contentCenter: {
     flex: 1,
     alignItems: 'center',
