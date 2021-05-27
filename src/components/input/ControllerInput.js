@@ -10,6 +10,7 @@ import {colors} from '../../config';
 
 const ControllerInput = props => {
   const {
+    inputRef,
     control,
     defaultValue,
     inputName,
@@ -20,7 +21,6 @@ const ControllerInput = props => {
   } = props;
 
   const getErrorMessage = () => {
-    console.log('Errors: ', errors);
     if (!errors) {
       return null;
     }
@@ -55,6 +55,7 @@ const ControllerInput = props => {
         render={({field: {onChange, onBlur, value}}) => (
           <TextInput
             {...rest}
+            ref={inputRef}
             underlineColor={colors.white}
             error={errors ? true : false}
             label={label}
@@ -87,6 +88,7 @@ ControllerInput.prototype = {
   label: PropTypes.string,
   validationRules: PropTypes.object,
   errors: PropTypes.object,
+  inputRef: PropTypes.object,
 };
 
 ControllerInput.defaultProps = {
@@ -96,6 +98,7 @@ ControllerInput.defaultProps = {
   label: '',
   validationRules: {},
   errors: null,
+  inputRef: null,
 };
 
 export default ControllerInput;

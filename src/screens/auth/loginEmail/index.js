@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useRef} from 'react';
 import {View} from 'react-native';
 import {useForm} from 'react-hook-form';
 
@@ -24,6 +24,9 @@ const LoginViaEmail = props => {
   } = useForm();
 
   const [isLoading, setIsLoading] = useState(false);
+
+  const emailInputRef = useRef(null);
+  const passwordInputRef = useRef(null);
 
   const onBack = () => {
     navigation.pop();
@@ -53,15 +56,19 @@ const LoginViaEmail = props => {
       headerLabel={'Login via Email'}>
       <View style={mainStyles.contentCenter}>
         <ControllerInput
+          inputRef={emailInputRef}
+          blurOnSubmit={false}
           editable={!isLoading}
           autoCapitalize={'none'}
           autoCompleteType={'email'}
           textContentType={'emailAddress'}
           keyboardType={'email-address'}
+          returnKeyType={'next'}
           control={control}
           defaultValue=""
           inputName="email"
           label={'Email'}
+          onSubmitEditing={() => passwordInputRef.current.focus()}
           validationRules={{
             required: {
               value: true,
@@ -75,15 +82,19 @@ const LoginViaEmail = props => {
           errors={errors.email ? errors.email : null}
         />
         <ControllerInput
+          inputRef={passwordInputRef}
+          blurOnSubmit={true}
           editable={!isLoading}
           autoCapitalize={'none'}
           autoCompleteType={'password'}
           textContentType={'password'}
+          returnKeyType={'go'}
           secureTextEntry={true}
           control={control}
           defaultValue=""
           inputName="password"
           label={'Password'}
+          onSubmitEditing={handleSubmit(login)}
           validationRules={{
             required: {
               value: true,
