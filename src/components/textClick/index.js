@@ -6,10 +6,10 @@ import Text from '../text';
 import {styles} from './styles';
 
 const TextClick = props => {
-  const {text, onPress} = props;
+  const {text, onPress, ...rest} = props;
   return (
     <TouchableOpacity style={styles.container} onPress={onPress}>
-      <Text medium style={styles.text}>
+      <Text {...rest} style={styles.text}>
         {text}
       </Text>
     </TouchableOpacity>

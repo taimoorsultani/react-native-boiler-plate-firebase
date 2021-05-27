@@ -118,11 +118,26 @@ const LoginViaEmail = props => {
           loading={isLoading}
         />
         <Divider value={20} />
-        <TextClick text={'Login via Phone Number'} onPress={loginPhoneNumber} />
+        <TextClick
+          medium
+          textCenter
+          text={'Login via Phone Number'}
+          onPress={loginPhoneNumber}
+        />
         <Divider value={20} />
-        <TextClick text={'Create a new account'} onPress={newAccount} />
+        <TextClick
+          medium
+          textCenter
+          text={'Create a new account'}
+          onPress={newAccount}
+        />
         <Divider value={20} />
-        <TextClick text={'Touble loggining in?'} onPress={troubleLogin} />
+        <TextClick
+          medium
+          textCenter
+          text={'Touble loggining in?'}
+          onPress={troubleLogin}
+        />
       </View>
     </DarkWallpaper>
   );
