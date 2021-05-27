@@ -5,7 +5,7 @@ import {createStackNavigator} from '@react-navigation/stack';
 import {
   AUTH_HOME,
   LOGIN_VIA_EMAIL,
-  LOGIN_VIA_MOBILE,
+  LOGIN_VIA_PHONE_NUMBER,
   REGISTRATION_VIA_EMAIL,
   FORGOT_PASSWORD,
 } from './routes';
@@ -13,7 +13,7 @@ import {
   AuthHome,
   ForgotPassword,
   LoginViaEmail,
-  LoginViaMobile,
+  LoginViaPhoneNumber,
   RegistrationViaEmail,
 } from '../screens/auth';
 
@@ -30,7 +30,10 @@ const AuthStack = props => {
         })}>
         <Stack.Screen name={AUTH_HOME} component={AuthHome} />
         <Stack.Screen name={LOGIN_VIA_EMAIL} component={LoginViaEmail} />
-        <Stack.Screen name={LOGIN_VIA_MOBILE} component={LoginViaMobile} />
+        <Stack.Screen
+          name={LOGIN_VIA_PHONE_NUMBER}
+          component={LoginViaPhoneNumber}
+        />
         <Stack.Screen
           name={REGISTRATION_VIA_EMAIL}
           component={RegistrationViaEmail}

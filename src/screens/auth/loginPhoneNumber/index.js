@@ -3,7 +3,7 @@ import React from 'react';
 import {DarkWallpaper} from '../../../components/wallpaper';
 import Text from '../../../components/text';
 
-const LoginViaMobile = props => {
+const LoginViaPhoneNumber = props => {
   const {navigation} = props;
 
   const onBack = () => {
@@ -15,10 +15,10 @@ const LoginViaMobile = props => {
       isBack
       onBackPress={onBack}
       isHeader
-      headerLabel={'Login via Mobile'}>
+      headerLabel={'Login via Phone Number'}>
       <Text medium>Login via Mobile</Text>
     </DarkWallpaper>
   );
 };
 
-export default LoginViaMobile;
+export default LoginViaPhoneNumber;
