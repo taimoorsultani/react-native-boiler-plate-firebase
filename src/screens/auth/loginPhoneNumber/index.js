@@ -23,16 +23,15 @@ const LoginViaPhoneNumber = props => {
     formState: {isValid},
   } = useForm();
 
-  useEffect(() => {
-    handleSubmit(login)();
-  }, []);
-
   const [countryCode, setCountryCode] = useState({
     cca2: 'PK',
     callingCode: ['92'],
   });
-
   const [isLoading, setIsLoading] = useState(false);
+
+  useEffect(() => {
+    handleSubmit(login)();
+  }, []);
 
   const login = data => {
     console.log('Login Pressed, Data is: ', data);

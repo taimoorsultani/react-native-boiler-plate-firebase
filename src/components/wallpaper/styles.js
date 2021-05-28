@@ -1,10 +1,12 @@
 import {StyleSheet} from 'react-native';
 
-import {padding} from '../../config';
+import {padding, colors} from '../../config';
 
 export const styles = StyleSheet.create({
   header: {
+    backgroundColor: colors.background,
     flexDirection: 'row',
+    zIndex: 10,
   },
   option: {
     flex: 1,
