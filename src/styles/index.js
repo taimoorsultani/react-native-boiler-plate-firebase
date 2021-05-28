@@ -1,6 +1,6 @@
 import {StyleSheet} from 'react-native';
 
-import {colors} from '../config';
+import {colors, padding} from '../config';
 
 export const mainStyles = StyleSheet.create({
   mainView: {
@@ -26,5 +26,16 @@ export const mainStyles = StyleSheet.create({
   },
   column: {
     flexDirection: 'column',
+  },
+  colReverse: {
+    paddingBottom: padding.large,
+    flexDirection: 'column-reverse',
+  },
+  centerAligned: {
+    alignItems: 'center',
+  },
+  extraPadding: {
+    paddingLeft: padding.large,
+    paddingRight: padding.large,
   },
 });

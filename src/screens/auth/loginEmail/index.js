@@ -11,7 +11,7 @@ import TextClick from '../../../components/textClick';
 import {
   FORGOT_PASSWORD,
   REGISTRATION_VIA_EMAIL,
-  LOGIN_VIA_MOBILE,
+  LOGIN_VIA_PHONE_NUMBER,
 } from '../../../stacks/routes';
 
 const LoginViaEmail = props => {
@@ -36,8 +36,8 @@ const LoginViaEmail = props => {
     console.log('Login Pressed, Data is: ', data);
   };
 
-  const loginMobile = () => {
-    navigation.push(LOGIN_VIA_MOBILE);
+  const loginPhoneNumber = () => {
+    navigation.push(LOGIN_VIA_PHONE_NUMBER);
   };
 
   const newAccount = () => {
@@ -54,7 +54,7 @@ const LoginViaEmail = props => {
       onBackPress={onBack}
       isHeader
       headerLabel={'Login via Email'}>
-      <View style={mainStyles.alignCenter}>
+      <View style={[mainStyles.alignCenter, mainStyles.extraPadding]}>
         <ControllerInput
           inputRef={emailInputRef}
           blurOnSubmit={false}
@@ -118,11 +118,26 @@ const LoginViaEmail = props => {
           loading={isLoading}
         />
         <Divider value={20} />
-        <TextClick text={'Login via Mobile'} onPress={loginMobile} />
+        <TextClick
+          medium
+          textCenter
+          text={'Login via Phone Number'}
+          onPress={loginPhoneNumber}
+        />
         <Divider value={20} />
-        <TextClick text={'Create a new account'} onPress={newAccount} />
+        <TextClick
+          medium
+          textCenter
+          text={'Create a new account'}
+          onPress={newAccount}
+        />
         <Divider value={20} />
-        <TextClick text={'Touble loggining in?'} onPress={troubleLogin} />
+        <TextClick
+          medium
+          textCenter
+          text={'Touble loggining in?'}
+          onPress={troubleLogin}
+        />
       </View>
     </DarkWallpaper>
   );

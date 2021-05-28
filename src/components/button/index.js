@@ -6,14 +6,14 @@ import Text from '../text';
 import {buttonStyles} from './styles';
 
 const Button = props => {
-  const {style, label, onPress, outline, loading} = props;
+  const {style, label, onPress, outline, loading, disabled} = props;
   return (
     <TouchableOpacity
-      disabled={loading}
+      disabled={disabled || loading}
       style={[
         style && style,
         buttonStyles.base,
-        !outline && buttonStyles.soild,
+        disabled ? buttonStyles.disabled : !outline && buttonStyles.soild,
       ]}
       onPress={onPress}
       activeOpacity={1}>
@@ -36,6 +36,7 @@ Button.prototype = {
   onPress: PropTypes.func,
   outline: PropTypes.bool,
   loading: PropTypes.bool,
+  disabled: PropTypes.bool,
 };
 
 Button.defaultProps = {
@@ -44,6 +45,7 @@ Button.defaultProps = {
   onPress: () => {},
   outline: false,
   loading: false,
+  disabled: false,
 };
 
 export default Button;

@@ -6,7 +6,8 @@ export const styles = StyleSheet.create({
   input: {
     fontSize: sizes.h4,
     backgroundColor: colors.transparent,
-    width: DEVICE_WIDTH - padding.extraLarge * 2,
+    width: DEVICE_WIDTH - padding.large * 4,
+    paddingHorizontal: 0,
   },
   errorMessage: {
     marginTop: margin.small,

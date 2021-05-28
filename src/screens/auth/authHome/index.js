@@ -9,7 +9,7 @@ import {mainStyles} from '../../../styles';
 import {authHomeStyles} from './styles';
 import {
   LOGIN_VIA_EMAIL,
-  LOGIN_VIA_MOBILE,
+  LOGIN_VIA_PHONE_NUMBER,
   REGISTRATION_VIA_EMAIL,
   FORGOT_PASSWORD,
 } from '../../../stacks/routes';
@@ -24,7 +24,7 @@ const AuthHome = props => {
   };
 
   const onLoginViaMobile = () => {
-    navigation.push(LOGIN_VIA_MOBILE);
+    navigation.push(LOGIN_VIA_PHONE_NUMBER);
   };
 
   const onRegistrationViaEmail = () => {

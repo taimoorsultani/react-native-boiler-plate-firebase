@@ -1,13 +1,13 @@
 import AuthHome from './authHome';
 import ForgotPassword from './forgotPassword';
 import LoginViaEmail from './loginEmail';
-import LoginViaMobile from './loginMobile';
+import LoginViaPhoneNumber from './loginPhoneNumber';
 import RegistrationViaEmail from './registrationEmail';
 
 export {
   AuthHome,
   ForgotPassword,
   LoginViaEmail,
-  LoginViaMobile,
+  LoginViaPhoneNumber,
   RegistrationViaEmail,
 };

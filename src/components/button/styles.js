@@ -20,8 +20,13 @@ export const buttonStyles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
+  disabled: {
+    borderColor: colors.gray,
+    backgroundColor: colors.gray,
+  },
   soild: {
     backgroundColor: colors.button,
+    borderColor: colors.buttonRGBA,
   },
   textOutlineStyles: {
     color: colors.buttonRGBA,

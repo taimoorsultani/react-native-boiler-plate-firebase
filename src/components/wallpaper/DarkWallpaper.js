@@ -5,6 +5,7 @@ import {
   SafeAreaView,
   KeyboardAvoidingView,
   TouchableOpacity,
+  Platform,
 } from 'react-native';
 import Entypo from 'react-native-vector-icons/Entypo';
 import {withTheme} from 'react-native-paper';
@@ -26,6 +27,18 @@ const DarkWallpaper = props => {
     theme,
     children,
   } = props;
+
+  const keyboardProps = Platform.select({
+    android: {
+      enabled: true,
+      keyboardVerticalOffset: 0,
+    },
+    ios: {
+      enabled: true,
+      keyboardVerticalOffset: 64,
+      behavior: 'padding',
+    },
+  });
 
   const renderLeft = () => {
     return isBack ? (
@@ -78,7 +91,7 @@ const DarkWallpaper = props => {
           {renderTitle()}
           {renderRight()}
         </View>
-        <KeyboardAvoidingView style={mainStyles.mainView} scrollEnabled={false}>
+        <KeyboardAvoidingView {...keyboardProps} style={mainStyles.mainView}>
           <View style={styles.innerView}>{children}</View>
         </KeyboardAvoidingView>
       </SafeAreaView>

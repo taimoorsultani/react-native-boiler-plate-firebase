@@ -15,6 +15,7 @@ export const colors = {
   buttonRGBA30: 'rgba(208, 28, 98, 0.3)',
   buttonRGBA10: 'rgba(208, 28, 98, 0.1)',
   transparent: 'transparent',
+  gray: 'gray',
   // button: '#007AFF',
   // buttonRGBA: 'rgba(0, 122, 255, 1)',
   // buttonRGBA80: 'rgba(0, 122, 255, 0.8)',
