@@ -35,7 +35,7 @@ const DarkWallpaper = props => {
     },
     ios: {
       enabled: true,
-      keyboardVerticalOffset: 64,
+      keyboardVerticalOffset: 10,
       behavior: 'padding',
     },
   });
