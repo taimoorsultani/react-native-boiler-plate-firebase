@@ -52,7 +52,12 @@ const LoginViaPhoneNumber = props => {
       onBackPress={onBack}
       isHeader
       headerLabel={'Login via Phone Number'}>
-      <View style={[mainStyles.mainView, mainStyles.colReverse]}>
+      <View
+        style={[
+          mainStyles.mainView,
+          mainStyles.colReverse,
+          mainStyles.extraPadding,
+        ]}>
         <View style={[mainStyles.column, mainStyles.centerAligned]}>
           <View style={[mainStyles.row, styles.phoneNumberRow]}>
             <CountryPicker
@@ -101,6 +106,7 @@ const LoginViaPhoneNumber = props => {
                     underlineColor={colors.white}
                     label={'Phone Number'}
                     style={styles.input}
+                    // paddingBottom={0}
                     onBlur={onBlur}
                     onChangeText={value => onChange(value)}
                     value={value}
@@ -130,6 +136,7 @@ const LoginViaPhoneNumber = props => {
             medium
           />
         </View>
+        <Divider value={30} />
         <Text medium colorSecondary h1 style={mainStyles.textWhite}>
           My number is
         </Text>

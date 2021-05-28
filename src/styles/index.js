@@ -34,4 +34,8 @@ export const mainStyles = StyleSheet.create({
   centerAligned: {
     alignItems: 'center',
   },
+  extraPadding: {
+    paddingLeft: padding.large,
+    paddingRight: padding.large,
+  },
 });

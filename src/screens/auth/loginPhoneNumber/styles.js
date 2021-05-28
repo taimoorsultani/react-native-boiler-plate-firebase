@@ -5,14 +5,17 @@ import {padding, sizes, colors, margin, DEVICE_WIDTH} from '../../../config';
 export const styles = StyleSheet.create({
   phoneNumberRow: {
     alignItems: 'center',
+    justifyContent: 'space-between',
+    width: DEVICE_WIDTH - padding.large * 4,
   },
   cca2: {
-    marginTop: padding.extraLarge,
+    marginTop: padding.extraLarge - 4,
   },
   input: {
-    fontSize: sizes.h4,
+    fontSize: sizes.h4 + 2,
     backgroundColor: colors.transparent,
-    width: DEVICE_WIDTH - padding.extraLarge * 4,
+    paddingHorizontal: 0,
+    width: DEVICE_WIDTH - padding.large * 9,
   },
   errorMessage: {
     marginTop: margin.small,

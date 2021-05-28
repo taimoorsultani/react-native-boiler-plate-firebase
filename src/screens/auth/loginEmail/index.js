@@ -54,7 +54,7 @@ const LoginViaEmail = props => {
       onBackPress={onBack}
       isHeader
       headerLabel={'Login via Email'}>
-      <View style={mainStyles.alignCenter}>
+      <View style={[mainStyles.alignCenter, mainStyles.extraPadding]}>
         <ControllerInput
           inputRef={emailInputRef}
           blurOnSubmit={false}
