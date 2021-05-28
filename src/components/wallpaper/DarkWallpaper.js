@@ -36,7 +36,7 @@ const DarkWallpaper = props => {
     ios: {
       enabled: true,
       keyboardVerticalOffset: 64,
-      behavior: 'height',
+      behavior: 'padding',
     },
   });
 
@@ -91,14 +91,7 @@ const DarkWallpaper = props => {
           {renderTitle()}
           {renderRight()}
         </View>
-        <KeyboardAvoidingView
-          {...keyboardProps}
-          // behavior={'padding'}
-          // behavior={'height'}
-          style={mainStyles.mainView}
-          // scrollEnabled={false}
-          // keyboardVerticalOffset={0}
-        >
+        <KeyboardAvoidingView {...keyboardProps} style={mainStyles.mainView}>
           <View style={styles.innerView}>{children}</View>
         </KeyboardAvoidingView>
       </SafeAreaView>
