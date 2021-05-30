@@ -105,7 +105,6 @@ const LoginViaPhoneNumber = props => {
                     underlineColor={colors.white}
                     label={'Phone Number'}
                     style={styles.input}
-                    // paddingBottom={0}
                     onBlur={onBlur}
                     onChangeText={value => onChange(value)}
                     value={value}
